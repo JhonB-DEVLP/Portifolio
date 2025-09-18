@@ -42,7 +42,7 @@ const translations: Translations = {
       bio2: "My journey in software development began over 5 years ago, and since then, I've worked on a diverse range of projects from e-commerce platforms to complex enterprise applications. I'm constantly learning and adapting to new technologies to stay at the forefront of web development.",
       experience: "5+ Years Experience",
       location: "Remote / Worldwide",
-      email: "contact@example.com",
+      email: "jhonesbonifacio_18@outlook.com",
     },
     projects: {
       title: "My",
@@ -87,12 +87,12 @@ const translations: Translations = {
     about: {
       title: "Sobre",
       subtitle: "Mim",
-      role: "Desenvolvedor Full-Stack",
+      role: "Empresário e Programador",
       bio1: "Sou um desenvolvedor full-stack apaixonado com experiência na construção de aplicações web modernas. Com uma base sólida em tecnologias frontend e backend, crio experiências intuitivas e amigáveis que resolvem problemas do mundo real.",
       bio2: "Minha jornada no desenvolvimento de software começou há mais de 5 anos e, desde então, trabalhei em uma variedade de projetos, desde plataformas de e-commerce até aplicações empresariais complexas. Estou constantemente aprendendo e me adaptando a novas tecnologias para estar na vanguarda do desenvolvimento web.",
       experience: "5+ Anos de Experiência",
       location: "Remoto / Mundial",
-      email: "contato@exemplo.com",
+      email: "jhonesbonifacio_18@outlook.com",
     },
     projects: {
       title: "Meus",
