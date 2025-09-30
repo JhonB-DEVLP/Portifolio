@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Instagram, Mail, ArrowUp } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function Footer() {
@@ -64,16 +64,16 @@ export default function Footer() {
               <p>{t("footer.available")}</p>
 
               <div className="flex gap-4 mt-3 sm:mt-4 justify-center sm:justify-start">
-                <a href="#" className="text-secondary hover:text-primary transition-colors">
+                <a href="https://github.com/JhonB-DEVLP" className="text-secondary hover:text-primary transition-colors">
                   <Github size={18} />
                 </a>
-                <a href="#" className="text-secondary hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/jhonesbonifaciodasilva/" className="text-secondary hover:text-primary transition-colors">
                   <Linkedin size={18} />
                 </a>
-                <a href="#" className="text-secondary hover:text-primary transition-colors">
-                  <Twitter size={18} />
+                <a href="https://www.instagram.com/jbtheonee?igsh=ZW83YzU2ZGNlc3J1&utm_source=qr" className="text-secondary hover:text-primary transition-colors">
+                  <Instagram size={18} />
                 </a>
-                <a href="mailto:contact@example.com" className="text-secondary hover:text-primary transition-colors">
+                <a href="mailto:jhonesbonifacio_18@outlook.com" className="text-secondary hover:text-primary transition-colors">
                   <Mail size={18} />
                 </a>
               </div>

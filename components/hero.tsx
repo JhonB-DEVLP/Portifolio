@@ -42,7 +42,7 @@ export default function Hero() {
         style={{
           background: `linear-gradient(135deg, var(--background) 0%, var(--tertiary) 80%, var(--background) 100%)`,
           backgroundSize: "400% 400%",
-          opacity: 0.3, // A opacidade pode ser ajustada para o efeito desejado
+          opacity: 0.2, // A opacidade pode ser ajustada para o efeito desejado
           animation: "gradientShift 20s ease infinite",
         }}
       />

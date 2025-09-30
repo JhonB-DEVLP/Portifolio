@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 
 // Define available languages
-export type Language = "en" | "pt"
+export type Language = "pt" | "en"
 
 // Define translations interface
 export interface Translations {
@@ -88,8 +88,8 @@ const translations: Translations = {
       title: "Sobre",
       subtitle: "Mim",
       role: "Empresário e Programador",
-      bio1: "Sou um desenvolvedor full-stack apaixonado com experiência na construção de aplicações web modernas. Com uma base sólida em tecnologias frontend e backend, crio experiências intuitivas e amigáveis que resolvem problemas do mundo real.",
-      bio2: "Minha jornada no desenvolvimento de software começou há mais de 5 anos e, desde então, trabalhei em uma variedade de projetos, desde plataformas de e-commerce até aplicações empresariais complexas. Estou constantemente aprendendo e me adaptando a novas tecnologias para estar na vanguarda do desenvolvimento web.",
+      bio1: "Sou um desenvolvedor full-stack, formado em sistemas para internet e engenharia de Software na Universidade Católica de Pernambuco, possuo bastante experiência na construção de aplicações web modernas. Com uma base sólida em tecnologias frontend e backend, crio soluções intuitivas e inovadoras para todos os meus clientes",
+      bio2: "Minha jornada no desenvolvimento de software começou há mais de 5 anos e, desde então, trabalhei em uma variedade de projetos, desde plataformas de e-commerce até aplicações empresariais complexas. Estou constantemente aprendendo e me adaptando a novas tecnologias do mercado mundial.",
       experience: "5+ Anos de Experiência",
       location: "Remoto / Mundial",
       email: "jhonesbonifacio_18@outlook.com",
@@ -129,7 +129,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 // Create provider component
 export function LanguageProvider({ children }: { children: ReactNode }) {
   // Get initial language from localStorage or default to 'en'
-  const [language, setLanguage] = useState<Language>("en")
+  const [language, setLanguage] = useState<Language>("pt")
 
   // Update language in localStorage when it changes
   useEffect(() => {

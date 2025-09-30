@@ -92,7 +92,7 @@ export default function Header() {
             alt="Logo do Portfólio"
             width={256}
             height={40}
-            className="h-auto w-48 md:w-45"
+            className="h-auto w-48 md:w-40"
             priority
           />
         </a>

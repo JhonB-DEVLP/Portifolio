@@ -12,9 +12,7 @@ const exo2 = Exo_2({
 })
 
 export const metadata = {
-  title: "Full-Stack Developer Portfolio",
-  description: "Portfolio showcasing my skills, projects and certificates as a full-stack developer",
-    generator: 'v0.app'
+  title: "Portifólio"
 }
 
 export default function RootLayout({

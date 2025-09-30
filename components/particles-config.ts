@@ -14,7 +14,7 @@ const particlesConfig: ISourceOptions = {
         enable: true, // Apenas habilitamos, o cálculo é automático
       },
       limit: {
-        value: 300, // Limita o número MÁXIMO de partículas na tela
+        value: 150, // Limita o número MÁXIMO de partículas na tela
       },
     },
     color: {

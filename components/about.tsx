@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Calendar, MapPin, Mail, Github, Linkedin, Twitter } from "lucide-react"
+import { Calendar, MapPin, Mail, Github, Linkedin, Instagram } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 export default function About() {
@@ -61,14 +61,14 @@ export default function About() {
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start">
-              <a href="#" className="reveal-stagger social-icon">
+              <a href="https://github.com/JhonB-DEVLP" className="reveal-stagger social-icon">
                 <Github className="text-secondary hover:text-primary" size={20} />
               </a>
-              <a href="#" className="reveal-stagger social-icon">
+              <a href="https://www.linkedin.com/in/jhonesbonifaciodasilva/" className="reveal-stagger social-icon">
                 <Linkedin className="text-secondary hover:text-primary" size={20} />
               </a>
-              <a href="#" className="reveal-stagger social-icon">
-                <Twitter className="text-secondary hover:text-primary" size={20} />
+              <a href="https://www.instagram.com/jbtheonee?igsh=ZW83YzU2ZGNlc3J1&utm_source=qr" className="reveal-stagger social-icon">
+                <Instagram className="text-secondary hover:text-primary" size={20} />
               </a>
             </div>
           </div>
