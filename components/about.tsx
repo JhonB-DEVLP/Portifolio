@@ -29,7 +29,7 @@ export default function About() {
               <div className="relative rounded-full border-4 border-tertiary overflow-hidden w-50 h-50 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
                 <Image
                   src="/perfil-jhon.jpg"
-                  alt="Profile"
+                  alt="Profile1"
                   width={350}
                   height={350}
                   className="w-full h-full object-cover object-center"
