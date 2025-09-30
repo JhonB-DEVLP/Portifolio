@@ -28,7 +28,7 @@ export default function About() {
               <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary to-secondary opacity-20 blur-lg"></div>
               <div className="relative rounded-full border-4 border-tertiary overflow-hidden w-50 h-50 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
                 <Image
-                  src="/Perfil Jhon.jpg"
+                  src="/perfil-jhon.jpg"
                   alt="Profile"
                   width={350}
                   height={350}

@@ -88,7 +88,7 @@ export default function Header() {
           className="cursor-pointer"
         >
           <Image
-            src={theme === 'dark' ? "/JHON SILVA PRINCIPAL.png" : "/JHON SILVA GRADIENTE ESCURO.png"}
+            src={theme === 'dark' ? "/jhon-silva-principal.png" : "/jhon-silva-gradiente-escuro.png"}
             alt="Logo do Portfólio"
             width={256}
             height={40}
