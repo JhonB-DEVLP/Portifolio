@@ -59,13 +59,13 @@ export default function Hero() {
       {/* CAMADA 10: Conteúdo Principal */}
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto md:mx-0">
-          <h1 className="reveal-up text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
+          <h1 className="reveal-up text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
             <span className="text-foreground">{t("hero.title")}</span>
             <br />
             <span className="text-primary">{t("hero.subtitle")}</span>
           </h1>
 
-          <p className="reveal-up text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8">
+          <p className="reveal-up text-xl sm:text-xl md:text-2xl text-foreground/80 mb-8">
             {t("hero.description")}
           </p>
 
@@ -76,7 +76,7 @@ export default function Hero() {
             >
               {t("hero.explore")}
             </button>
-            <a href="#about" className="btn-secondary w-full sm:w-auto">
+            <a href="#about" className="btn-secondary center w-full sm:w-auto">
               {t("hero.about")}
             </a>
           </div>
