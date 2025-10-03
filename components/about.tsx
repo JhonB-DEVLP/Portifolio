@@ -24,9 +24,9 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="reveal-left order-1 lg:order-1 flex justify-center">
-            <div className="relative overflow-hidden">
+            <div className="relative">
               <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary to-secondary opacity-20 blur-lg"></div>
-              <div className="relative rounded-full border-4 border-tertiary overflow-hidden w-50 h-50 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
+              <div className="relative rounded-full border-4 border-tertiary overflow-hidden w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
                 <Image
                   src="/perfil-jhon.jpg"
                   alt="Profile"
