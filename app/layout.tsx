@@ -26,7 +26,7 @@ export default function RootLayout({
         {/* Custom font for Ethnocentric */}
         <link rel="stylesheet" href="/fonts/ethnocentric/stylesheet.css" />
       </head>
-      <body className={`${exo2.variable}`}>
+      <body className={`${exo2.variable} overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

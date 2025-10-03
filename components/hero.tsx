@@ -34,8 +34,8 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden py-20 md:py-0">
-      
+    <section id="home" className="w-full min-h-screen flex items-center relative overflow-hidden py-20 md:py-0">
+
       {/* CAMADA 0: Fundo de Gradiente Animado */}
       <div
         className="absolute inset-0 z-0"
