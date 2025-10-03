@@ -130,7 +130,7 @@ export default function Projects() {
 
         <div className="reveal-scale relative">
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mb-8 min-h-[600px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 mb-8 min-h-[400px]">
             {currentProjects.map((project, index) => (
               <div
                 key={startIndex + index}
@@ -154,7 +154,7 @@ export default function Projects() {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.slice(0, 3).map((tag, i) => (
-                      <span key={i} className="text-xs px-3 py-1 rounded-full bg-tertiary/20 text-secondary">
+                      <span key={i} className="text-xs py-1 rounded-full bg-tertiary/20 text-secondary">
                         {tag}
                       </span>
                     ))}
