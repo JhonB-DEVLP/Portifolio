@@ -106,7 +106,7 @@ const translations: Translations = {
       view: "Ver Certificado",
     },
     footer: {
-      description: "Criando soluções web inovadoras com tecnologias modernas e melhores práticas.",
+      description: "Criando soluções web inovadoras com tecnologias de ponta e totalmente personalizadas para sua empresa.",
       quickLinks: "Links Rápidos",
       contact: "Contato",
       available: "Disponível para trabalhos freelance",

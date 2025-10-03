@@ -1,8 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { Award, Calendar, ExternalLink } from "lucide-react"
+import { Award, Calendar, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { useState } from "react"
 
 const certificates = [
   {
@@ -51,6 +52,15 @@ const certificates = [
 
 export default function Certificates() {
   const { t } = useLanguage()
+  const [page, setPage] = useState(0)
+
+  const nextPage = () => {
+    setPage((prev) => (prev + 1) % certificates.length)
+  }
+
+  const prevPage = () => {
+    setPage((prev) => (prev - 1 + certificates.length) % certificates.length)
+  }
 
   return (
     <section id="certificates" className="section bg-background relative">
@@ -66,15 +76,82 @@ export default function Certificates() {
         <div className="reveal-up flex items-center justify-center mb-12">
           <Award className="text-primary mr-3" size={32} />
           <h2 className="text-[22px] md:text-4xl font-bold">
-            {t("certificates.title")} <span className="text-primary">{t("certificates.subtitle")}</span>
+            {t("certificates.title")}{" "}
+            <span className="text-primary">{t("certificates.subtitle")}</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {/* --- MOBILE: apenas 1 certificado por página --- */}
+        <div className="block sm:hidden">
+          <div className="certificate-card h-full">
+            <div className="relative aspect-video">
+              <Image
+                src={certificates[page].image || "/placeholder.svg"}
+                alt={certificates[page].title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+            </div>
+
+            <div className="certificate-content p-3">
+              <h3 className="text-base font-bold mb-1">
+                {certificates[page].title}
+              </h3>
+              <p className="text-secondary text-xs mb-2">
+                {certificates[page].issuer}
+              </p>
+
+              <div className="flex justify-between items-center">
+                <div className="flex items-center text-foreground/60 text-xs">
+                  <Calendar size={12} className="mr-1" />
+                  {certificates[page].date}
+                </div>
+
+                <a
+                  href={certificates[page].link}
+                  className="flex items-center gap-1 text-xs text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("certificates.view")}
+                  <ExternalLink size={10} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Botões de navegação */}
+          <div className="flex justify-center items-center gap-6 mt-4">
+            <button
+              onClick={prevPage}
+              className="p-2 rounded-full bg-secondary/10 hover:bg-secondary/20 transition"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <span className="text-xs text-foreground/60">
+              {page + 1} / {certificates.length}
+            </span>
+            <button
+              onClick={nextPage}
+              className="p-2 rounded-full bg-secondary/10 hover:bg-secondary/20 transition"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
+
+        {/* --- DESKTOP: grid de 6 certificados --- */}
+        <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {certificates.map((cert, index) => (
-            <div key={index} className="reveal-stagger certificate-card h-full">
+            <div key={index} className="certificate-card h-full">
               <div className="relative aspect-video">
-                <Image src={cert.image || "/placeholder.svg"} alt={cert.title} fill className="object-cover" />
+                <Image
+                  src={cert.image || "/placeholder.svg"}
+                  alt={cert.title}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
               </div>
 

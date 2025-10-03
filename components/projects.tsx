@@ -227,7 +227,7 @@ export default function Projects() {
                     key={index}
                     onClick={() => goToPage(index)}
                     className={`w-3 h-3 rounded-full transition-all ${
-                      currentPage === index ? "bg-primary scale-125" : "bg-tertiary/50 hover:bg-tertiary/80"
+                      currentPage === index ? "bg-primary scale-150" : "bg-gray-400 hover:bg-gray-500"
                     }`}
                     aria-label={`Go to page ${index + 1}`}
                   />
