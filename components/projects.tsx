@@ -226,22 +226,14 @@ export default function Projects() {
                   <button
                     key={index}
                     onClick={() => goToPage(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      currentPage === index ? "bg-primary scale-150" : "bg-gray-400 hover:bg-gray-500"
-                    }`}
+                    className={`w-3 h-3 rounded-full transition-all ${currentPage === index ? "bg-primary scale-150" : "bg-gray-400 hover:bg-gray-500"
+                      }`}
                     aria-label={`Go to page ${index + 1}`}
                   />
                 ))}
               </div>
             </>
           )}
-        </div>
-
-        {/* Projects Counter */}
-        <div className="reveal-up text-center mt-8">
-          <p className="text-sm text-foreground/60">
-            Mostrando {startIndex + 1}-{Math.min(endIndex, projects.length)} de {projects.length} projetos
-          </p>
         </div>
       </div>
     </section>
