@@ -75,7 +75,7 @@ const translations: Translations = {
     hero: {
       title: "Desenvolvedor",
       subtitle: "Full-Stack",
-      description: "Transformando suas ideias em experiências, serviços e negócios digitais com as melhores tecnologias do mercado.",
+      description: "Transformando ideias em experiências digitais excepcionais usando tecnologias modernas de web.",
       explore: "Explorar Meu Trabalho",
       about: "Sobre Mim",
       scroll: "Rolar para Baixo",
@@ -87,10 +87,10 @@ const translations: Translations = {
     about: {
       title: "Sobre",
       subtitle: "Mim",
-      role: "Empresário e Programador",
-      bio1: "Sou um desenvolvedor full-stack, formado em sistemas para internet e engenharia de Software na Universidade Católica de Pernambuco, possuo bastante experiência na construção de aplicações web modernas. Com uma base sólida em tecnologias frontend e backend, crio soluções intuitivas e inovadoras para todos os meus clientes",
-      bio2: "Minha jornada no desenvolvimento de software começou há mais de 5 anos e, desde então, trabalhei em uma variedade de projetos, desde plataformas de e-commerce até aplicações empresariais complexas. Estou constantemente aprendendo e me adaptando a novas tecnologias do mercado mundial.",
-      experience: "5+ Anos de Experiência",
+      role: "Desenvolvedor Full-Stack",
+      bio1: "Sou um desenvolvedor full-stack apaixonado por construir aplicações web modernas. Com sólida experiência em tecnologias de frontend e backend, crio experiências intuitivas e funcionais que resolvem problemas do mundo real.",
+      bio2: "Minha jornada no desenvolvimento de software começou há mais de 5 anos. Desde então, trabalhei em diversos projetos, desde plataformas de e-commerce até aplicações empresariais complexas. Estou sempre aprendendo e me adaptando às novas tecnologias para me manter na vanguarda do desenvolvimento web.",
+      experience: "Mais de 5 anos de experiência",
       location: "Remoto / Mundial",
       email: "jhonesbonifacio_18@outlook.com",
     },
@@ -98,7 +98,7 @@ const translations: Translations = {
       title: "Meus",
       subtitle: "Projetos",
       liveDemo: "Demo ao Vivo",
-      sourceCode: "Código Fonte",
+      sourceCode: "Código-Fonte",
     },
     certificates: {
       title: "Certificados &",
@@ -106,7 +106,7 @@ const translations: Translations = {
       view: "Ver Certificado",
     },
     footer: {
-      description: "Criando soluções web inovadoras com tecnologias de ponta e totalmente personalizadas para sua empresa.",
+      description: "Criando soluções web inovadoras com tecnologias modernas e as melhores práticas.",
       quickLinks: "Links Rápidos",
       contact: "Contato",
       available: "Disponível para trabalhos freelance",
@@ -115,6 +115,7 @@ const translations: Translations = {
     },
   },
 }
+
 
 // Define the context type
 interface LanguageContextType {
