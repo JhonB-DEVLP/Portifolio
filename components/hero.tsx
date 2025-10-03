@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/language-context"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { type ISourceOptions } from "@tsparticles/engine"
 import { loadSlim } from "@tsparticles/slim"
-import particlesConfig from "./particles-config" // Verifique se este caminho está correto!
+import particlesConfig from "./particles-config"
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -72,11 +72,11 @@ export default function Hero() {
           <div className="reveal-up flex flex-wrap gap-4">
             <button
               onClick={scrollToSkills}
-              className="btn-primary w-full sm:w-auto"
+              className="btn-primary w-full  sm:w-auto"
             >
               {t("hero.explore")}
             </button>
-            <a href="#about" className="btn-secondary center w-full sm:w-auto">
+            <a href="#about" className="btn-secondary text-center w-full sm:w-auto">
               {t("hero.about")}
             </a>
           </div>

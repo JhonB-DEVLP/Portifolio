@@ -65,7 +65,7 @@ export default function Certificates() {
       <div className="container relative z-10">
         <div className="reveal-up flex items-center justify-center mb-12">
           <Award className="text-primary mr-3" size={32} />
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-[22px] md:text-4xl font-bold">
             {t("certificates.title")} <span className="text-primary">{t("certificates.subtitle")}</span>
           </h2>
         </div>
