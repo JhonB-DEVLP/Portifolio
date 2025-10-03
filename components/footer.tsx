@@ -50,7 +50,7 @@ export default function Footer() {
                 alt="Logo do Portfólio"
                 width={256}
                 height={40}
-                className="h-auto w-28 md:w-32"
+                className="h-auto w-[135px] md:w-32"
                 priority
               />
             </a>
