@@ -23,11 +23,11 @@ export default function Hero() {
     })
   }, [])
 
-  const scrollToSkills = () => {
-    const skillsSection = document.getElementById("skills")
-    if (skillsSection) {
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projects")
+    if (projectsSection) {
       window.scrollTo({
-        top: skillsSection.offsetTop - 80,
+        top: projectsSection.offsetTop - 80,
         behavior: "smooth",
       })
     }
@@ -71,7 +71,7 @@ export default function Hero() {
 
           <div className="reveal-up flex flex-wrap gap-4">
             <button
-              onClick={scrollToSkills}
+              onClick={scrollToProjects}
               className="btn-primary w-full  sm:w-auto"
             >
               {t("hero.explore")}
