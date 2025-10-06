@@ -12,7 +12,11 @@ const exo2 = Exo_2({
 })
 
 export const metadata = {
-  title: "Portifólio"
+  title: "Portifólio",
+  description: "Portifólio de desenvolvedor Full-Stack",
+  icons: {
+    icon: "/favicon.png", // ou /favicon.png, desde que esteja na pasta /public
+  },
 }
 
 export default function RootLayout({
