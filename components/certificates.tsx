@@ -10,44 +10,86 @@ const certificates = [
     title: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
     date: "2023",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
+    image: "/1.png",
+    link: "/1.png",
   },
   {
     title: "Full-Stack Web Development",
     issuer: "Udacity",
     date: "2022",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
+    image: "/2.png",
+    link: "/2.png",
   },
   {
     title: "React Advanced Concepts",
     issuer: "Frontend Masters",
     date: "2022",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
+    image: "/3.jfif",
+    link: "/3.jfif",
   },
   {
     title: "Node.js Microservices",
     issuer: "Coursera",
     date: "2021",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
+    image: "/4.jfif",
+    link: "/4.jfif",
   },
   {
     title: "UI/UX Design Fundamentals",
     issuer: "Interaction Design Foundation",
     date: "2021",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
+    image: "/5.jfif",
+    link: "/5.jfif",
   },
   {
     title: "Advanced JavaScript Concepts",
     issuer: "Pluralsight",
     date: "2020",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "#",
+    image: "/6.jfif",
+    link: "/6.jfif",
   },
+  {
+    title: "Advanced JavaScript Concepts",
+    issuer: "Pluralsight",
+    date: "2020",
+    image: "/7.jfif",
+    link: "/7.jfif",
+  },
+  {
+    title: "Advanced JavaScript Concepts",
+    issuer: "Pluralsight",
+    date: "2020",
+    image: "/8.jfif",
+    link: "/8.jfif",
+  },
+  {
+    title: "Advanced JavaScript Concepts",
+    issuer: "Pluralsight",
+    date: "2020",
+    image: "/9.jfif",
+    link: "/9.jfif",
+  },
+  {
+    title: "Advanced JavaScript Concepts",
+    issuer: "Pluralsight",
+    date: "2020",
+    image: "/10.png",
+    link: "/10.jfif",
+  },
+  {
+    title: "Advanced JavaScript Concepts",
+    issuer: "Pluralsight",
+    date: "2020",
+    image: "/11.png",
+    link: "/11.png",
+  },
+  {
+    title: "Diploma Universitário",
+    issuer: "Universidade Católica de Pernambuco",
+    date: "2025",
+    image: "/12.png",
+    link: "/12.png",
+  }
 ]
 
 export default function Certificates() {
@@ -111,13 +153,15 @@ export default function Certificates() {
           {currentCertificates.map((cert, index) => (
             <div key={index} className="certificate-card h-full">
               <div className="relative aspect-video">
-                <Image
-                  src={cert.image || "/placeholder.svg"}
-                  alt={cert.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+                <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={cert.image}
+                    alt={cert.title}
+                    fill
+                    className="object-cover rounded-lg cursor-pointer hover:opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+                </a>
               </div>
 
               <div className="certificate-content p-3 sm:p-4">
