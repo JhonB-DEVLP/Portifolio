@@ -1,35 +1,31 @@
 import type React from "react"
 import { Exo_2 } from "next/font/google"
-import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LanguageProvider } from "@/contexts/language-context"
+import "./globals.css"
 
-// Load Exo 2 font
+// Carrega a fonte principal da aplicação
 const exo2 = Exo_2({
   subsets: ["latin"],
-  variable: "--font-exo2",
+  variable: "--font-exo2", // Disponibiliza a fonte como uma variável CSS
   display: "swap",
 })
 
+// Metadados da página para SEO e para o navegador
 export const metadata = {
   title: "Portifólio",
   description: "Portifólio de desenvolvedor Full-Stack",
   icons: {
-    icon: "/favicon.png", // ou /favicon.png, desde que esteja na pasta /public
+    icon: "/favicon.png",
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+// O RootLayout é o componente principal que "abraça" toda a aplicação
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Custom font for Ethnocentric */}
-        <link rel="stylesheet" href="/fonts/ethnocentric/stylesheet.css" />
-      </head>
+    // As alterações estão aqui 👇
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head />
       <body className={`${exo2.variable} overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"

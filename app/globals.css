@@ -218,3 +218,144 @@ html {
     background-position: 100% 100%;
   }
 }
+/* globals.css */
+/* globals.css */
+
+.btn-primary {
+  /* --- Efeito Metálico Quadrado e Estilo Base --- */
+  position: relative; /* Essencial para o efeito de luz */
+  overflow: hidden;   /* Esconde a luz que "vaza" para fora */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  /* border-radius: 9999px; */ /* REMOVIDO para ser quadrado */
+  border-radius: 0.5rem; /* Bordas levemente arredondadas para um visual moderno */
+  font-weight: 600;
+  color: var(--foreground); /* Cor do texto agora se adapta ao tema */
+  background: var(--tertiary); /* Fundo base para o efeito metálico */
+  
+  /* Gradiente para o efeito metálico */
+  background-image: linear-gradient(
+    135deg, 
+    var(--tertiary) 0%, 
+    var(--primary) 20%, /* Cor primária mais visível */
+    var(--secondary) 40%, /* Cor secundária mais visível */
+    var(--tertiary) 60%, 
+    var(--primary) 80%, 
+    var(--tertiary) 100%
+  );
+  background-size: 200% 200%; /* Permite animação do gradiente */
+  animation: metallicGradient 5s ease infinite alternate; /* Animação para o gradiente se mover */
+
+  border: 1px solid var(--primary); /* Borda sólida com cor primária */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2); /* Sombra mais pronunciada e brilho interno */
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: var(--secondary); /* Borda muda no hover para mais realce */
+}
+
+/* Keyframes para a animação do gradiente metálico */
+@keyframes metallicGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
+/* --- Efeito de Luz que segue o cursor (ajustado para mais realce e cor) --- */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  left: var(--mouse-x, -100px);
+  top: var(--mouse-y, -100px);
+
+  /* Aumentei o tamanho para um brilho mais evidente */
+  width: 200px; 
+  height: 200px;
+  
+  /* Gradiente radial mais intenso e com uma cor mais próxima do primário/secundário */
+  background: radial-gradient(circle, 
+              rgba(var(--primary-rgb), 0.8) 0%, /* Luz com a cor primária mais opaca */
+              rgba(var(--secondary-rgb), 0.6) 30%, /* Efeito de brilho com secundário */
+              transparent 80%);
+  
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.1s linear; /* Transição mais rápida para acompanhar o mouse */
+  pointer-events: none;
+  z-index: 1; /* Garante que a luz fica por cima do texto */
+}
+
+.btn-primary:hover::before {
+  opacity: 1; /* Mostra a luz quando o mouse está por cima */
+}
+
+/* Certifica que o texto fica por cima do efeito de luz */
+.btn-primary > * {
+  position: relative;
+  z-index: 2; 
+}
+/* globals.css */
+
+/* --- Estilos para o Botão Secundário --- */
+.btn-secondary {
+  /* --- Estilo Base "Fantasma" --- */
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem; /* Bordas quadradas, igual ao primário */
+  font-weight: 600;
+  color: var(--primary); /* Texto com a cor primária */
+  background-color: transparent; /* Fundo transparente */
+  border: 1px solid var(--primary); /* Borda com a cor primária */
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px); /* <-- EFEITO DE SUBIR ADICIONADO */
+  background-color: var(--primary);
+  color: var(--background);
+  /* Sombra ajustada para dar mais profundidade ao subir */
+  box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.4); 
+}
+
+/* --- Efeito de Luz Interna que segue o cursor --- */
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  left: var(--mouse-x, -100px);
+  top: var(--mouse-y, -100px);
+
+  width: 120px;
+  height: 120px;
+  
+  /* Gradiente radial com a cor secundária, mais sutil */
+  background: radial-gradient(circle, 
+              rgba(var(--secondary-rgb), 0.3) 0%, /* Luz com a cor secundária */
+              transparent 70%);
+  
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-secondary:hover::before {
+  opacity: 1;
+}
+
+/* Garante que o texto fique por cima do efeito de luz */
+.btn-secondary > * {
+  position: relative;
+  z-index: 2;
+}

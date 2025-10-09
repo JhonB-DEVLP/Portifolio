@@ -1,8 +1,9 @@
 "use client"
-
+import { ShinyButton } from "./ShinyButton"
 import { useEffect, useState } from "react"
 import { ArrowDown } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { motion } from "framer-motion"
 
 // Importações para as partículas
 import Particles, { initParticlesEngine } from "@tsparticles/react"
@@ -10,16 +11,38 @@ import { type ISourceOptions } from "@tsparticles/engine"
 import { loadSlim } from "@tsparticles/slim"
 import particlesConfig from "./particles-config"
 
+// Constante para o offset do scroll
+const SCROLL_OFFSET = 80;
+
+// Variantes para a animação (sem delay para sincronizar com o Header)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Mantém o efeito cascata entre os itens
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { y: 30, opacity: 0 }, // Começa 30px abaixo e invisível
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
+}
+
 export default function Hero() {
   const { t } = useLanguage()
-  const [init, setInit] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
-  // Efeito para inicializar o motor das partículas apenas uma vez
+  // Garante que 'Particles' só renderize no lado do cliente
   useEffect(() => {
+    setIsClient(true)
     initParticlesEngine(async (engine) => {
       await loadSlim(engine)
-    }).then(() => {
-      setInit(true)
     })
   }, [])
 
@@ -27,81 +50,82 @@ export default function Hero() {
     const projectsSection = document.getElementById("projects")
     if (projectsSection) {
       window.scrollTo({
-        top: projectsSection.offsetTop - 80,
+        top: projectsSection.offsetTop - SCROLL_OFFSET,
+        behavior: "smooth",
+      })
+    }
+  }
+
+  const scrollToAbout = () => {
+    const projectsSection = document.getElementById("about")
+    if (projectsSection) {
+      window.scrollTo({
+        top: projectsSection.offsetTop - SCROLL_OFFSET,
         behavior: "smooth",
       })
     }
   }
 
   return (
-    <section id="home" className="w-full min-h-screen flex items-center relative overflow-hidden py-20 md:py-0">
+    <section id="home" className="relative flex items-center w-full min-h-screen py-20 md:py-0 overflow-hidden">
 
-      {/* CAMADA 0: Fundo de Gradiente Animado */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background: `linear-gradient(135deg, var(--background) 0%, var(--tertiary) 80%, var(--background) 100%)`,
-          backgroundSize: "400% 400%",
-          opacity: 0.2, // A opacidade pode ser ajustada para o efeito desejado
-          animation: "gradientShift 20s ease infinite",
-        }}
-      />
-
-      {/* CAMADA 1: Fundo de Partículas */}
-      {init && (
+      {/* --- FUNDO (Gradiente e Partículas) --- */}
+      <div className="absolute inset-0 z-0 bg-gradient-hero animate-gradient-shift opacity-20" />
+      {isClient && (
         <Particles
           id="tsparticles"
           options={particlesConfig as ISourceOptions}
-          className="absolute inset-0 z-1" // z-index ajustado para 1
+          className="absolute inset-0 z-10"
         />
       )}
 
-      {/* CAMADA 10: Conteúdo Principal */}
-      <div className="container relative z-10">
+      {/* --- CONTEÚDO PRINCIPAL (Com Animação) --- */}
+      <motion.div
+        className="container relative z-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="max-w-3xl mx-auto md:mx-0">
-          <h1 className="reveal-up text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+          >
             <span className="text-foreground">{t("hero.title")}</span>
             <br />
             <span className="text-primary">{t("hero.subtitle")}</span>
-          </h1>
+          </motion.h1>
 
-          <p className="reveal-up text-xl sm:text-xl md:text-2xl text-foreground/80 mb-8">
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-foreground/80 sm:text-xl md:text-2xl mb-8"
+          >
             {t("hero.description")}
-          </p>
+          </motion.p>
 
-          <div className="reveal-up flex flex-wrap gap-4">
-            <button
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <ShinyButton
               onClick={scrollToProjects}
-              className="btn-primary w-full  sm:w-auto"
+              className="btn-primary w-full sm:w-auto" // A classe btn-primary é o que ativa o CSS
             >
               {t("hero.explore")}
-            </button>
-            <a href="#about" className="btn-secondary text-center w-full sm:w-auto">
+            </ShinyButton>
+            <ShinyButton
+              onClick={scrollToAbout}
+              className="btn-secondary text-center w-full sm:w-auto"
+            >
               {t("hero.about")}
-            </a>
-          </div>
+            </ShinyButton>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="reveal-scale absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
-        <span className="text-foreground/60 text-sm mb-2">
-          {t("hero.scroll")}
-        </span>
+      {/* --- INDICADOR DE SCROLL --- */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-20">
+        <span className="text-sm text-foreground/60 mb-2">{t("hero.scroll")}</span>
         <ArrowDown className="text-primary animate-bounce" size={24} />
       </div>
 
-      {/* Animação para o Gradiente */}
-      <style jsx>{`
-        @keyframes gradientShift {
-          0%,
-          100% {
-            background-position: 0% 0%;
-          }
-          50% {
-            background-position: 100% 100%;
-          }
-        }
-      `}</style>
     </section>
   )
 }
