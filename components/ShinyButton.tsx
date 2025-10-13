@@ -1,13 +1,11 @@
-// components/ShinyButton.tsx
 "use client"
 
 import React, { useRef, useEffect, forwardRef } from 'react';
 
-// Adicionamos a prop "as" para permitir polimorfismo
 type ShinyButtonProps = {
-  as?: React.ElementType; // Pode ser 'button', 'a', etc.
+  as?: React.ElementType; 
   children: React.ReactNode;
-} & React.HTMLAttributes<HTMLElement>; // Aceita props de qualquer elemento HTML
+} & React.HTMLAttributes<HTMLElement>;
 
 export const ShinyButton = forwardRef<HTMLElement, ShinyButtonProps>(
   ({ as: Component = 'button', children, ...props }, ref) => {
