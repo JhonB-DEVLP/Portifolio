@@ -1,18 +1,14 @@
 "use client"
-
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 
-// Define available languages
 export type Language = "pt" | "en"
 
-// Define translations interface
 export interface Translations {
   [key: string]: {
     [key: string]: string | { [key: string]: string }
   }
 }
 
-// Create translations object
 const translations: Translations = {
   en: {
     nav: {
@@ -25,7 +21,7 @@ const translations: Translations = {
     hero: {
       title: "Full-Stack",
       subtitle: "Developer",
-      description: "Transforming ideas into exceptional digital experiences with modern web technologies.",
+      description: "Transforming your ideas into experiences, services and digital businesses with the best technologies on the market.",
       explore: "Explore My Work",
       about: "About Me",
       scroll: "Scroll Down",
@@ -75,7 +71,7 @@ const translations: Translations = {
     hero: {
       title: "Desenvolvedor",
       subtitle: "Full-Stack",
-      description: "Transformando ideias em experiências digitais excepcionais usando tecnologias modernas de web.",
+      description: "Transformando suas ideias em experiências, serviços e negócios digitais com as melhores tecnologias do mercado.",
       explore: "Explorar Meu Trabalho",
       about: "Sobre Mim",
       scroll: "Rolar para Baixo",
