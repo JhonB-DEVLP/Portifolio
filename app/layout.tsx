@@ -16,7 +16,7 @@ const exo2 = Exo_2({
 // Metadados
 export const metadata = {
   title: "Portifólio",
-  description: "Portifólio de desenvolvedor Full-Stack",
+  description: "CTO, Emprendedor e Desenvolvedor Full-Stack",
   icons: {
     icon: "/favicon.png",
   },
@@ -24,12 +24,12 @@ export const metadata = {
 
 // Opções recomendadas do Lenis
 const lenisOptions = {
-  autoRaf: true,      // Deixa o Lenis gerenciar o loop de animação automaticamente
-  smoothWheel: true,  // Ativa rolagem suave com o mouse
-  smoothTouch: false, // Mantém rolagem nativa em telas de toque
-  lerp: 0.1,          // Suavidade (0 = duro, 1 = muito leve)
-  wheelMultiplier: 1, // Sensibilidade
-  anchors: true,      // Permite âncoras <a href="#id">
+  autoRaf: true,
+  smoothWheel: true,
+  smoothTouch: false,
+  lerp: 0.1,
+  wheelMultiplier: 1, 
+  anchors: true,   
 }
 
 // Layout principal
@@ -38,7 +38,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" suppressHydrationWarning>
       <head />
       <body className={`${exo2.variable} overflow-x-hidden`}>
-        {/* Envolve todo o conteúdo da aplicação dentro do ReactLenis */}
         <ReactLenis root options={lenisOptions}>
           <ThemeProvider
             attribute="class"
