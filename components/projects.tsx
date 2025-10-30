@@ -94,14 +94,6 @@ const projects = [
     liveLink: "https://www.aurum.com.br/",
     githubLink: "#",
   },
-  {
-    title: "Zaia",
-    description: "Agentes de Inteligência Artificial Personalizados Para Sua Empresa.",
-    image: "/Institutional/12.png",
-    tags: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion", "Lenis"],
-    liveLink: "https://zaia.app/",
-    githubLink: "#",
-  },
 ]
 
 export default function Projects() {
